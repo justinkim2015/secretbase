@@ -1,0 +1,17 @@
+<h1>New Post</h1>
+
+<%= form_with model: @post do |form| %>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :body %>
+    <%= form.text_field :body %>
+  </div>
+
+  <%= form.submit "Submit Post" %>
+<% end %>
+
+<%# This is currently saving nothing, I think I need to make some strong params since this is passing the information as a hash %>
