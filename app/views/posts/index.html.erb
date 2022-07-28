@@ -1,0 +1,6 @@
+<% @posts.each do |post| %>
+  <div><%= post.title %> - <%= post.body %></div>
+  <div><%= post.user.username %></div>
+<% end  %>
+
+<%= link_to "New Post", "/posts/new" %>
