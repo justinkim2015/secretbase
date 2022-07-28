@@ -1,12 +1,16 @@
 <% stylesheet_link_tag "index" %>
 
-<% @posts.each do |post| %>
-  <div class="post">
-    <div><%= post.title %> - <%= post.body %></div>
-    <div><%= post.user.username %></div>
-  </div>
-<% end  %>
+<div class="header">
+  <h1>Secret Base</h1>
+  <%= link_to "New Post", new_post_path, class: "link" %>
+  <%= link_to "User Info", "/users/edit", class: "link" %>
+</div>
 
-<%= link_to "New Post", new_post_path, class: "link" %>
-<%= link_to "User Info", "/users/edit", class: "link" %>
-
+<div class="main">
+  <% @posts.each do |post| %>
+    <div class="post">
+      <div><%= post.user.username %></div>
+      <div><%= post.title %> - <%= post.body %></div>
+    </div>
+  <% end  %>
+</div>
