@@ -1,0 +1,14 @@
+body {
+    display: grid;
+    font-size: 20px;
+}
+
+.post {
+    margin: 10px;
+    border: 1px black solid;
+    padding: 50px;
+}
+
+.link {
+    border: 1px black solid;
+}

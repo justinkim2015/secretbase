@@ -1,6 +1,11 @@
+<% stylesheet_link_tag "index" %>
+
 <% @posts.each do |post| %>
-  <div><%= post.title %> - <%= post.body %></div>
-  <div><%= post.user.username %></div>
+  <div class="post">
+    <div><%= post.title %> - <%= post.body %></div>
+    <div><%= post.user.username %></div>
+  </div>
 <% end  %>
 
-<%= link_to "New Post", "/posts/new" %>
+<%= link_to "New Post", "/posts/new", class: "link" %>
+
