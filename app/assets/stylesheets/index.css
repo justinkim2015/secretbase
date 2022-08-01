@@ -1,21 +1,21 @@
-* {
+* { 
     margin: 0;
     padding: 0;
 }
 
-body {
-    display: grid;
-    font-size: 20px;
+.body {
+  height: 100vh;
+  grid-template-rows: 15vh 85vh;
+  display: grid;
+  font-size: 20px;
 }
 
 .header { 
-    height: 15vh;
     width: 100vw;
     background-color: rgb(199, 199, 199);
 }
 
 .main {
-    height: 85vh;
     width: 100vw;
     background-color: white;
 }

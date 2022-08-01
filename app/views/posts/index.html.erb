@@ -1,21 +1,28 @@
 <% stylesheet_link_tag "index" %>
 
-<div class="header">
-  <h1>Secret Base</h1>
-  <%= link_to "New Post", new_post_path, class: "link" %>
-  <%= link_to "User Info", "/users/edit", class: "link" %>
-</div>
-
-<div class="main">
-  <% @posts.each do |post| %>
-    <div class="post">
-      <div><%= post.title %> - <%= post.body %></div>
-
-      <% if current_user.nil? %>
-        <div>SECRET</div>
-      <% else %>
-        <div><%= post.user.username %></div>
-      <% end %>
-    </div>
-  <% end  %>
+<div class="body">
+  <div class="header">
+    <h1>Secret Base</h1>
+    <%= link_to "New Post", new_post_path, class: "link" %>
+    <%= link_to "User Info", "/users/edit", class: "link" %>
+  
+    <% if user_signed_in? %>
+      <%= button_to "Log out", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= button_to "Log in", new_user_session_path, class: "link" %>
+    <% end %>
+  </div>
+  
+  <div class="main">
+    <% @posts.each do |post| %>
+      <div class="post">
+        <div><%= post.title %> - <%= post.body %></div>
+        <% if user_signed_in? %>
+          <div><%= post.user.username %></div>
+        <% else %>
+          <div>Log in to see!</div>
+        <% end %>
+      </div>
+    <% end  %>
+  </div>
 </div>

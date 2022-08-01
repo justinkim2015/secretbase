@@ -31,6 +31,6 @@ class PostsController < ApplicationController
   end
 
   def require_login
-    redirect_to '/users/sign_in' if current_user.nil?
+    redirect_to new_user_session_path unless user_signed_in?
   end
 end
